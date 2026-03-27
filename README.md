@@ -1,27 +1,19 @@
-# EvaluacionHito2_SIS_12992520_SamuelVillca
-Desarrollo un sistema en consola para la gestión de turnos de atención de estudiantes.
-
 # Sistema de Gestión de Turnos de Estudiantes
 
-## [cite_start]1. Descripción del Sistema [cite: 41]
-Esra es una aplicación de consola desarrollada en C++ para gestionar turnos de atención en orden de llegada. Permite registrar estudiantes, atenderlos, buscarlos por nombre y visualizar la lista de espera.
+## 1. Descripción del Sistema
+Este sistema es una aplicación de consola desarrollada en C++ diseñada para gestionar los turnos de atención de estudiantes. El programa permite registrar nuevos alumnos, atenderlos siguiendo el orden de llegada, visualizar la lista de espera y buscar estudiantes específicos por su nombre.
 
-## [cite_start]2. Estructura Usada y Justificación [cite: 42]
-[cite_start]Se implementó una **Lista Doblemente Enlazada** manual[cite: 35, 37]. 
-- [cite_start]**Justificación**: Se eligió esta estructura porque permite un manejo dinámico de la memoria (la lista crece según llegan alumnos) y, al ser doblemente enlazada, permite recorridos bidireccionales (hacia adelante y hacia atrás), cumpliendo con el requisito de punto extra[cite: 68].
+## 2. Estructura Usada y Justificación
+Se implementó una **Lista Doblemente Enlazada** de forma manual, sin utilizar librerías externas (STL). 
+- **Justificación**: Esta estructura permite una gestión dinámica de la memoria, permitiendo que la lista crezca o disminuya según sea necesario. Además, al ser doblemente enlazada, permite el recorrido en ambos sentidos (frente a final y viceversa), cumpliendo con el requisito para obtener el punto extra.
 
-## [cite_start]3. Complejidad de las Operaciones [cite: 43]
-| Operación | Complejidad | Descripción |
-| :--- | :--- | :--- |
-| **Inserción (Registrar)** | $O(1)$ | Al tener un puntero al `final`, la inserción es inmediata. |
-| **Eliminación (Atender)** | $O(1)$ | Al eliminar siempre del `frente`, la operación es constante. |
-| **Búsqueda** | $O(n)$ | En el peor de los casos, se debe recorrer toda la lista. |
+## 3. Complejidad de las Operaciones
+- **Inserción (Registrar estudiante)**: $O(1)$. Al mantener un puntero al final de la lista, agregar un nuevo estudiante es una operación constante.
+- **Eliminación (Atender estudiante)**: $O(1)$. Como se sigue una lógica FIFO (primero en llegar, primero en salir), siempre se elimina el nodo del frente.
+- **Búsqueda (Buscar por nombre)**: $O(n)$. En el peor de los casos, se debe recorrer la lista completa para encontrar al estudiante.
 
-## [cite_start]4. Instrucciones de Compilación y Ejecución [cite: 44]
-1. Asegúrese de tener un compilador de C++ (como G++).
-2. Compile el archivo con: `g++ main.cpp -o sistema`
-3. Ejecute con: `./sistema` (en Linux/Mac) o `sistema.exe` (en Windows).
-
-## 5. Datos del Estudiante
-- **Nombre**: [Tu Nombre Completo]
-- [cite_start]**Repositorio**: examen-estructuras-datos-[tu-nombre-apellido]
+## 4. Instrucciones de Compilación y Ejecución
+1.  **Compilación**: Use un compilador de C++ (como g++) y ejecute el comando:
+    `g++ main.cpp -o sistema`
+2.  **Ejecución**: Inicie el programa con el comando:
+    `./sistema` (en Linux/Mac) o ejecutando el
